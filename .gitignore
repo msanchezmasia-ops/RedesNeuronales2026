@@ -1,0 +1,17 @@
+# Entorno virtual y caches
+.venv/
+__pycache__/
+.ipynb_checkpoints/
+
+# Bases de datos de los estudios y del tracking (binarios, se regeneran al ejecutar)
+*.db
+*.sqlite
+mlruns/
+mlartifacts/
+
+# Logs de TensorBoard
+runs/
+
+# Salidas generadas por los notebooks (se pueden regenerar)
+figures/
+results/
