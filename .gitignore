@@ -1,17 +1,24 @@
-# Entorno virtual y caches
-.venv/
-__pycache__/
-.ipynb_checkpoints/
+# 1) Ignorar todo por defecto
+*
 
-# Bases de datos de los estudios y del tracking (binarios, se regeneran al ejecutar)
-*.db
-*.sqlite
+# 2) Excepto las carpetas (para que Git pueda entrar a buscar notebooks)
+!*/
+
+# 3) ...y excepto estos archivos
+!*.ipynb
+!README.md
+!requirements.txt
+!.gitignore
+
+# 4) Carpetas que nunca se suben, aunque contengan .ipynb
+#    (van DESPUÉS de las excepciones para que ganen)
+.venv/
+.venv*/
+venv/
+.ipynb_checkpoints/
+__pycache__/
 mlruns/
 mlartifacts/
-
-# Logs de TensorBoard
 runs/
-
-# Salidas generadas por los notebooks (se pueden regenerar)
 figures/
 results/
