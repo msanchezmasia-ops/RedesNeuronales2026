@@ -1,4 +1,4 @@
-# Entorno usado en los TPs (Python 3.10+). Instalar con: pip install -r requirements.txt
+# Entorno usado en los TPs (Python 3.11-3.13). Instalar con: pip install -r requirements.txt
 torch>=2.2
 numpy>=1.26
 pandas>=2.0

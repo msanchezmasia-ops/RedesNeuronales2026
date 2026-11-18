@@ -1,24 +1,20 @@
-# 1) Ignorar todo por defecto
+$txt = @'
+# Whitelist estricta: solo se sube lo que se lista aca
 *
 
-# 2) Excepto las carpetas (para que Git pueda entrar a buscar notebooks)
-!*/
+# Raiz del repo (la barra inicial lo ancla a la raiz)
+!/.gitignore
+!/README.md
+!/requirements.txt
 
-# 3) ...y excepto estos archivos
-!*.ipynb
-!README.md
-!requirements.txt
-!.gitignore
+# Notebooks: solo los que esten directamente dentro de una carpeta TP*/
+!TP*/
+!TP*/*.ipynb
 
-# 4) Carpetas que nunca se suben, aunque contengan .ipynb
-#    (van DESPUÉS de las excepciones para que ganen)
-.venv/
+# Entornos virtuales
 .venv*/
 venv/
-.ipynb_checkpoints/
-__pycache__/
-mlruns/
-mlartifacts/
-runs/
-figures/
-results/
+'@
+[System.IO.File]::WriteAllText("$PWD\.gitignore", $txt, (New-Object System.Text.UTF8Encoding($false)))
+Get-Content .gitignore
+git status --short
