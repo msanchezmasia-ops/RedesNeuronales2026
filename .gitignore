@@ -1,20 +1,8 @@
-$txt = @'
-# Whitelist estricta: solo se sube lo que se lista aca
 *
-
-# Raiz del repo (la barra inicial lo ancla a la raiz)
 !/.gitignore
 !/README.md
 !/requirements.txt
-
-# Notebooks: solo los que esten directamente dentro de una carpeta TP*/
 !TP*/
 !TP*/*.ipynb
-
-# Entornos virtuales
 .venv*/
 venv/
-'@
-[System.IO.File]::WriteAllText("$PWD\.gitignore", $txt, (New-Object System.Text.UTF8Encoding($false)))
-Get-Content .gitignore
-git status --short
